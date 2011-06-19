@@ -29,7 +29,6 @@ public class LicensesEditAction extends Action {
 					.lookup("LicenseKeeper/LicenseKeeperBean/local");
 			int id = Integer.parseInt(request.getParameter("licensedObjectId"));
 			LicensedObjectOperatingSystem licensedObject = licenseKeeper.getLicensedObjectOperatingSystem(id);
-			System.out.println(licensedObject.getDescription());
 			OSForm.setId(id);
 			OSForm.setPublisher(licensedObject.getPublisher());
 			OSForm.setName(licensedObject.getName());
