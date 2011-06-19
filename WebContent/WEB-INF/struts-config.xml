@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE struts-config PUBLIC 
+ "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" 
+ "http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+	<!-- ========== Définition des beans de formulaire =============== -->
+	<form-beans>
+		<form-bean name="licensedObjectOSForm" type="web.LicensedObjectOSForm" />
+	</form-beans>
+
+	<!-- ========== Définition des beans de formulaire ================ -->
+	<global-forwards>
+		<forward name="index" path="/index.jsp" />
+		<forward name="login" path="/login.do" />
+		<forward name="licensesList" path="/licensesList.do" />
+		<forward name="licensesAdd" path="/licensesEdit.jsp" />
+	</global-forwards>
+
+	<!-- ========== Définition du mappage d'action ==================== -->
+	<action-mappings>
+		<action path="/login" type="web.LoginAction" name="LoginForm"
+			scope="request" input="/login.jsp" validate="false">
+		</action>
+		<action path="/licensesList" type="web.LicensesListAction">
+			<forward name="listing" path="/licensesList.jsp">
+			</forward>
+		</action>
+		<action path="/licensesEdit" type="web.LicensesEditAction"
+			name="licensedObjectOSForm" scope="request" input="/licensesEdit.jsp"
+			validate="false">
+		</action>
+		<action path="/licensesSave" type="web.LicensesSaveAction"
+			name="licensedObjectOSForm" scope="request" input="/licensesEdit.jsp"
+			validate="true">
+		</action>
+
+
+	</action-mappings>
+
+	<!-- ========== Définition Messages et plug-in ==================== -->
+	<message-resources parameter="web.Messages" />
+</struts-config>
