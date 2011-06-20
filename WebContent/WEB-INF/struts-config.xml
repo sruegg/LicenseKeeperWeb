@@ -8,6 +8,7 @@
 	<form-beans>
 		<form-bean name="licensedObjectOSForm" type="web.LicensedObjectOSForm" />
 		<form-bean name="licensedObjectSWForm" type="web.LicensedObjectSWForm" />
+		<form-bean name="licensedObjectVersionForm" type="web.LicensedObjectVersionForm" />
 	</form-beans>
 
 	<!-- ========== Définition des beans de formulaire ================ -->
@@ -15,8 +16,8 @@
 		<forward name="index" path="/index.jsp" />
 		<forward name="login" path="/login.do" />
 		<forward name="licensesList" path="/licensesList.do" />
-		<forward name="licensesOSAdd" path="/licensesOSEdit.jsp" />
-		<forward name="licensesSWAdd" path="/licensesSWEdit.jsp" />
+		<forward name="keysList" path="/keysList.do" />
+		<forward name="licensesVersionAdd" path="/versionsEdit.jsp" />
 	</global-forwards>
 
 	<!-- ========== Définition du mappage d'action ==================== -->
@@ -42,6 +43,18 @@
 		</action>
 		<action path="/licensesSWSave" type="web.LicensesSWSaveAction"
 			name="licensedObjectSWForm" scope="request" input="/licensesSWEdit.jsp"
+			validate="true">
+		</action>
+		<action path="/keysList" type="web.KeysListAction">
+			<forward name="listing" path="/keysList.jsp">
+			</forward>
+		</action>
+		<action path="/versionsEdit" type="web.VersionsEditAction"
+			name="licensedObjectVersionForm" scope="request" input="/versionsEdit.jsp"
+			validate="false">
+		</action>
+		<action path="/versionsEdit" type="web.VersionsSaveAction"
+			name="licensedObjectVersionForm" scope="request" input="/versionsEdit.jsp"
 			validate="true">
 		</action>
 

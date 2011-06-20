@@ -4,19 +4,30 @@
 
 <html>
 <head>
-<title>Liste des licenses</title>
+<title>LicenseKeeper</title>
 </head>
 <body>
 	<h1>Licenses</h1>
 
 	<h2>Operating Systems</h2>
-	<table border="1">
+	<table border="1" width="800">
+		<tr>
+			<th width="10%">Category</th>
+			<th width="20%">Publisher</th>
+			<th width="20%">Name</th>
+			<th width="30%">Description</th>
+			<th width="10%">Service Pack Version</th>
+			<th width="10%">Actions</th>
+		</tr>
 		<logic:iterate id="licensedobjectOS" name="licensedObjectsOS">
 			<tr>
+				<td><bean:write name="licensedobjectOS" property="category.name" />
 				<td><bean:write name="licensedobjectOS" property="publisher" />
 				</td>
 				<td><bean:write name="licensedobjectOS" property="name" /></td>
 				<td><bean:write name="licensedobjectOS" property="description" />
+				</td>
+				<td><bean:write name="licensedobjectOS" property="servicePackVersion" />
 				</td>
 				<td><html:link page="/licensesOSEdit.do"
 						paramId="licensedObjectId" paramName="licensedobjectOS"
@@ -31,18 +42,28 @@
 
 
 	<ul>
-		<li><html:link forward="licensesOSAdd">Ajout d'un license</html:link>
+		<li><html:link page="/licensesOSEdit.do">Ajout d'un license</html:link>
 		</li>
 	</ul>
 	
 	<h2>Softwares</h2>
-	<table border="1">
+	<table border="1" width="800">
+		<tr>
+			<th width="10%">Category</th>
+			<th width="20%">Publisher</th>
+			<th width="20%">Name</th>
+			<th width="30%">Description</th>
+			<th width="10%">Actions Limit</th>
+			<th width="10%">Actions</th>
+		</tr>
 		<logic:iterate id="licensedobjectSW" name="licensedObjectsSW">
 			<tr>
+				<td><bean:write name="licensedobjectOS" property="category.name" />
 				<td><bean:write name="licensedobjectSW" property="publisher" />
 				</td>
 				<td><bean:write name="licensedobjectSW" property="name" /></td>
 				<td><bean:write name="licensedobjectSW" property="description" />
+				<td><bean:write name="licensedobjectSW" property="activationsLimit" />
 				</td>
 				<td><html:link page="/licensesSWEdit.do"
 						paramId="licensedObjectId" paramName="licensedobjectSW"
@@ -57,7 +78,7 @@
 
 
 	<ul>
-		<li><html:link forward="licensesSWAdd">Ajout d'un license</html:link>
+		<li><html:link page="/licensesSWEdit.do">Ajout d'un license</html:link>
 		</li>
 	</ul>
 

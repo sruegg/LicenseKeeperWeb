@@ -20,26 +20,26 @@ import session.PersistException;
 
 import persistance.*;
 
-public class LicensesOSEditAction extends Action {
+public class LicensesSWEditAction extends Action {
 
 	public ActionForward execute(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) {
 		try {
-			LicensedObjectOSForm OSForm = (LicensedObjectOSForm) form;
+			LicensedObjectSWForm OSForm = (LicensedObjectSWForm) form;
 			Context context = new InitialContext();
 			LicenseKeeper licenseKeeper = (LicenseKeeper) context
 					.lookup("LicenseKeeper/LicenseKeeperBean/local");
+
 			if (request.getParameter("licensedObjectId") != null) {
 				int id = Integer.parseInt(request
 						.getParameter("licensedObjectId"));
-				LicensedObjectOperatingSystem licensedObject = licenseKeeper
-						.getLicensedObjectOperatingSystem(id);
+				LicensedObjectSoftware licensedObject = licenseKeeper
+						.getLicensedObjectSoftware(id);
 				OSForm.setId(id);
 				OSForm.setPublisher(licensedObject.getPublisher());
 				OSForm.setName(licensedObject.getName());
 				OSForm.setDescription(licensedObject.getDescription());
-				OSForm.setServicePackVersion(licensedObject
-						.getServicePackVersion());
+				OSForm.setActivationsLimit(licensedObject.getActivationsLimit());
 				OSForm.setCategory(licensedObject.getCategory().getId());
 
 				List<LicensedObjectVersion> licensedObjectsVersions = licenseKeeper

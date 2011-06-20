@@ -12,7 +12,7 @@ import org.apache.struts.action.ActionMessages;
 
 import persistance.Category;
 
-public class LicensedObjectOSForm extends ActionForm {
+public class LicensedObjectSWForm extends ActionForm {
 
 	private static final long serialVersionUID = 1L;
 	
@@ -20,7 +20,7 @@ public class LicensedObjectOSForm extends ActionForm {
 	private String publisher;
 	private String name;
 	private String description;
-	private String servicePackVersion;
+	private int activationsLimit;
 	private int category;
 	private List<Category> categories;
 
@@ -56,19 +56,18 @@ public class LicensedObjectOSForm extends ActionForm {
 		this.description = description;
 	}
 
-	public String getServicePackVersion() {
-		return servicePackVersion;
+	public int getActivationsLimit() {
+		return activationsLimit;
 	}
 
-	public void setServicePackVersion(String servicePackVersion) {
-		this.servicePackVersion = servicePackVersion;
+	public void setActivationsLimit(int activationsLimit) {
+		this.activationsLimit = activationsLimit;
 	}
 
 	public void reset(ActionMapping mapping, HttpServletRequest request) {
 		publisher = "";
 		name = "";
 		description = "";
-		servicePackVersion = "";
 	}
 
 	public ActionErrors validate(ActionMapping arg0, HttpServletRequest arg1) {

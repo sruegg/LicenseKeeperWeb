@@ -9,14 +9,15 @@
 <body>
 	<h1>Licenses</h1>
 
-	<h2>Operating Systems</h2>
+	<h2>Softwares</h2>
 	
 	<h3>Edit Object</h3>
 
 	<html:errors />
 
-	<html:form action="/licensesOSSave.do" method="POST">
+	<html:form action="/licensesSWSave.do" method="POST">
 		<html:hidden property="id" />
+
 		<table>
 			<tr>
 				<td>Category:</td>
@@ -27,29 +28,23 @@
 			</tr>
 			<tr>
 				<td>Publisher:</td>
-				<td><html:text property="publisher" />
-				</td>
+				<td><html:text property="publisher" /></td>
 			</tr>
 			<tr>
 				<td>Name:</td>
-				<td><html:text property="name" />
-				</td>
+				<td><html:text property="name" /></td>
 			</tr>
 			<tr>
 				<td>Description:</td>
-				<td><html:text property="description" />
-				</td>
+				<td><html:text property="description" /></td>
 			</tr>
 			<tr>
-				<td>Service pack version:</td>
-				<td><html:text property="servicePackVersion" />
-				</td>
+				<td>Activations Limit:</td>
+				<td><html:text property="activationsLimit" /></td>
 			</tr>
 			<tr>
-				<td><html:submit value="Valider" />
-				</td>
-				<td><html:cancel value="Cancel" />
-				</td>
+				<td><html:submit value="Valider" /></td>
+				<td><html:cancel value="Cancel" /></td>
 			</tr>
 		</table>
 	</html:form>
@@ -85,7 +80,6 @@
 		</table>
 
 	</logic:notEmpty>
-
 
 </body>
 </html>

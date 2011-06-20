@@ -18,20 +18,19 @@ import session.PersistException;
 
 import persistance.*;
 
-public class LicensesOSSaveAction extends Action {
+public class VersionsSaveAction extends Action {
 
 	public ActionForward execute(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) {
-		if (!this.isCancelled(request)) {
+		/*if(!this.isCancelled(request)){
 			try {
-				LicensedObjectOSForm OSForm = (LicensedObjectOSForm) form;
+				LicensedObjectSWForm OSForm = (LicensedObjectSWForm) form;
 				Context context = new InitialContext();
 				LicenseKeeper licenseKeeper = (LicenseKeeper) context
 						.lookup("LicenseKeeper/LicenseKeeperBean/local");
-				LicensedObject licensedObject = new LicensedObjectOperatingSystem(
-						OSForm.getId(), OSForm.getPublisher(),
-						OSForm.getName(), OSForm.getDescription(),
-						OSForm.getServicePackVersion(), licenseKeeper.getCategory(OSForm.getCategory()));
+				LicensedObject licensedObject = new LicensedObjectSoftware(
+						OSForm.getId(), OSForm.getPublisher(), OSForm.getName(),
+						OSForm.getDescription(), OSForm.getActivationsLimit());
 				licenseKeeper.saveLicensedObject(licensedObject);
 			} catch (PersistException ex) {
 				ActionMessages messages = new ActionMessages();
@@ -48,7 +47,7 @@ public class LicensesOSSaveAction extends Action {
 				System.out.println(ex.getMessage());
 				return mapping.getInputForward();
 			}
-		}
+		}*/
 		return mapping.findForward("licensesList");
 	}
 }

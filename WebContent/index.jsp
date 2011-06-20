@@ -3,6 +3,9 @@
 <%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic"%>
 
 <html>
+<head>
+<title>LicenseKeeper</title>
+</head>
 <body>
 	<h1>LicenseKeeper</h1>
 
