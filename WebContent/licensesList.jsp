@@ -9,16 +9,17 @@
 <body>
 	<h1>Licenses</h1>
 
+	<h2>Operating Systems</h2>
 	<table border="1">
-		<logic:iterate id="licensedobject" name="licensedObjects">
+		<logic:iterate id="licensedobjectOS" name="licensedObjectsOS">
 			<tr>
-				<td><bean:write name="licensedobject" property="publisher" />
+				<td><bean:write name="licensedobjectOS" property="publisher" />
 				</td>
-				<td><bean:write name="licensedobject" property="name" /></td>
-				<td><bean:write name="licensedobject" property="description" />
+				<td><bean:write name="licensedobjectOS" property="name" /></td>
+				<td><bean:write name="licensedobjectOS" property="description" />
 				</td>
-				<td><html:link page="/licensesEdit.do"
-						paramId="licensedObjectId" paramName="licensedobject"
+				<td><html:link page="/licensesOSEdit.do"
+						paramId="licensedObjectId" paramName="licensedobjectOS"
 						paramProperty="id">
         edit
         </html:link></td>
@@ -30,7 +31,33 @@
 
 
 	<ul>
-		<li><html:link forward="licensesAdd">Ajout d'un license</html:link>
+		<li><html:link forward="licensesOSAdd">Ajout d'un license</html:link>
+		</li>
+	</ul>
+	
+	<h2>Softwares</h2>
+	<table border="1">
+		<logic:iterate id="licensedobjectSW" name="licensedObjectsSW">
+			<tr>
+				<td><bean:write name="licensedobjectSW" property="publisher" />
+				</td>
+				<td><bean:write name="licensedobjectSW" property="name" /></td>
+				<td><bean:write name="licensedobjectSW" property="description" />
+				</td>
+				<td><html:link page="/licensesSWEdit.do"
+						paramId="licensedObjectId" paramName="licensedobjectSW"
+						paramProperty="id">
+        edit
+        </html:link></td>
+
+			</tr>
+		</logic:iterate>
+
+	</table>
+
+
+	<ul>
+		<li><html:link forward="licensesSWAdd">Ajout d'un license</html:link>
 		</li>
 	</ul>
 

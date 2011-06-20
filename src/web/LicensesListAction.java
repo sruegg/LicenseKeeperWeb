@@ -26,9 +26,12 @@ public class LicensesListAction extends Action {
 			Context context = new InitialContext();
 			LicenseKeeper licenseKeeper = (LicenseKeeper) context
 					.lookup("LicenseKeeper/LicenseKeeperBean/local");
-			List<LicensedObject> licensedObjects = licenseKeeper
-					.getLicensedObjects();
-			request.setAttribute("licensedObjects", licensedObjects);
+			List<LicensedObjectOperatingSystem> licensedObjectsOS = licenseKeeper
+					.getLicensedObjectsOperatingSystem();
+			request.setAttribute("licensedObjectsOS", licensedObjectsOS);
+			List<LicensedObjectSoftware> licensedObjectsSW = licenseKeeper
+					.getLicensedObjectsSoftware();
+			request.setAttribute("licensedObjectsSW", licensedObjectsSW);
 		} catch (PersistException e) {
 			e.printStackTrace();
 		} catch (NamingException e) {

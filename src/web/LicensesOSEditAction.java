@@ -18,7 +18,7 @@ import session.PersistException;
 
 import persistance.*;
 
-public class LicensesEditAction extends Action {
+public class LicensesOSEditAction extends Action {
 
 	public ActionForward execute(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) {

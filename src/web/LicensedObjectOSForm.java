@@ -1,14 +1,5 @@
 package web;
 
-import java.util.Collection;
-
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.Lob;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.servlet.http.HttpServletRequest;
 import org.apache.struts.action.ActionErrors;
 import org.apache.struts.action.ActionForm;
@@ -16,11 +7,10 @@ import org.apache.struts.action.ActionMapping;
 import org.apache.struts.action.ActionMessage;
 import org.apache.struts.action.ActionMessages;
 
-import persistance.Category;
-import persistance.LicensedObjectVersion;
-
 public class LicensedObjectOSForm extends ActionForm {
 
+	private static final long serialVersionUID = 1L;
+	
 	private int id;
 	private String publisher;
 	private String name;

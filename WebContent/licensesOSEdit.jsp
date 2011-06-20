@@ -5,7 +5,7 @@
 
 <html:errors />
 
-<html:form action="/licensesSave.do" method="POST">
+<html:form action="/licensesOSSave.do" method="POST">
 	<html:hidden property="id" />
 	<p>
 		Publisher:
